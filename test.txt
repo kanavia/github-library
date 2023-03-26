@@ -1,8 +1,31 @@
+echo -> 문서를 만들어라
+---> ex) echo "# github-library" >> README.md ---> # github-library 라는 텍스트 내용이 들어간 README.md 라는 이름의 파일이름으로 저장해라
+
 git init: 지정된 이름으로 로컬 저장소 생성
+
 git status: 새로운 파일이나 커밋 되기 전 수정된 파일을 확인
+---> 변경이 되었는지 확인할 수 있다.
+---> 변경이 되었다면 untracked files 라고 뜨면서 빨간색깔 글씨가 뜨게된다
+
 git add: 저장하고 싶은 파일을 골라서 스냅샷을 뜨는데 이 과정을 스테이징한다라고 함.
+---> git add 파일이름(README.md)라고 써야 한다.
+---> 내용을 수정한 후 git add 파일명 을 쓰고 git status를 하면 changes to be comitted 이라고 뜨면서 저장된다.
+---> 엄청나게 많은 파일들이 변경되었으며 수정되었으면 git add . 이라고 쓰면 전부 다 저장된다.
+
 git commit: 파일 스냅샷을 영구적으로 메세지를 넣어서 기록함.
+---> 그냥 내가 하고싶은 메세지를 쓴다라고 생각하면 된다
+---> ex) git commit -m "난 정말 멋있어"
+
+git remote add origin <github의 주소>
+---> 로컬저장소와 github를 연결하는 것이다
+
 git push: 모든 로컬 커밋들을 github에 업로드 하는 것
+---> ex) git push -u origin main ---> github내에 있는 main이라는 branch에 업로드를 한다.
+
 git clone: github에 있는 프로젝트 및 전체 버전 히스토리를 다운
+---> 만약 내가 다른컴퓨터를 쓰고 있을 경우에 코드들이 저장되어 있는 폴더가 없게 된다. 그럴경우에는 github에서 <code> -> <https>에 나와있는
+     깃허브 사이트 주소를 들고와서 git clone <사이트주소> 를 하면 다른컴퓨터에 폴더가 만들어지게된다.
+     
 git pull: github에 있는 기록 다운로드 및 변경점 결합
-를 이번에는 썻습니다.
+---> 만약에 다른곳(예를들면. 코랩)에서 만든 파일을 github에는 올렸지만 vscode에는 안올렸기때문에 github에는 파일이 뜨지만 vscode에는
+     추가한 파일이 안뜨게 됩니다. 그럴경우 git pull을 쓰면 vscode에도 추가한 파일을 표시할 수 있다.
